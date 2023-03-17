@@ -29,7 +29,7 @@ const itemImages = images.forEach((item) => {
 
   imageItem.style.marginLeft = galleryImages.hasChildNodes() ? "30px" : "0";
 
-  galleryImages.append(imageItem);
-  imageItem.append(image);
+  imageItem.appendChild(image);
+  galleryImages.appendChild(imageItem);
 });
 console.log(galleryImages);
