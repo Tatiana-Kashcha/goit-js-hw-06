@@ -12,24 +12,24 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-const galleryImages = document.querySelector(".gallery");
-galleryImages.style.backgroundColor = "#f1b6a1";
-galleryImages.style.display = "flex";
-galleryImages.style.listStyle = "none";
-galleryImages.style.justifyContent = "center";
-galleryImages.style.padding = "30px 0";
+const galleryImagesEl = document.querySelector(".gallery");
+galleryImagesEl.style.backgroundColor = "#f1b6a1";
+galleryImagesEl.style.display = "flex";
+galleryImagesEl.style.listStyle = "none";
+galleryImagesEl.style.justifyContent = "center";
+galleryImagesEl.style.padding = "30px 0";
 
 const itemImages = images.forEach((item) => {
-  const imageItem = document.createElement("li");
-  const image = document.createElement("img");
-  image.src = item.url;
-  image.alt = item.alt;
-  image.height = 200;
-  image.style.display = "block";
+  const imageItemEl = document.createElement("li");
+  const imageEl = document.createElement("img");
+  imageEl.src = item.url;
+  imageEl.alt = item.alt;
+  imageEl.height = 200;
+  imageEl.style.display = "block";
 
-  imageItem.style.marginLeft = galleryImages.hasChildNodes() ? "30px" : "0";
+  imageItemEl.style.marginLeft = galleryImagesEl.hasChildNodes() ? "30px" : "0";
 
-  imageItem.appendChild(image);
-  galleryImages.appendChild(imageItem);
+  imageItemEl.appendChild(imageEl);
+  galleryImagesEl.appendChild(imageItemEl);
 });
-console.log(galleryImages);
+console.log(galleryImagesEl);
