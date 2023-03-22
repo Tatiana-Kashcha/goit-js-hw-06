@@ -13,36 +13,18 @@ const images = [
   },
 ];
 const galleryImagesEl = document.querySelector(".gallery");
-galleryImagesEl.style.backgroundColor = "#f1b6a1";
-galleryImagesEl.style.display = "flex";
-galleryImagesEl.style.listStyle = "none";
-galleryImagesEl.style.justifyContent = "center";
-galleryImagesEl.style.padding = "30px 0";
 
 const makeGalleryImages = (imgEl) => {
   const { url, alt } = imgEl;
-  return `<li class="list-item"><img class="gallery-item" src=${url} alt=${alt} height = 200></li>`;
+  return `<li class="list-item"><img class="gallery-item" src=${url} alt=${alt} height = 200></li>`; //стилі додані в CSS
 };
 const itemImages = images.map(makeGalleryImages).join("");
 galleryImagesEl.insertAdjacentHTML("beforeend", itemImages);
 
-const imageItemEl = galleryImagesEl
-  .querySelectorAll(".list-item")
-  .forEach((item) => {
-    item.style.marginLeft = "30px";
-  });
-galleryImagesEl.firstElementChild.style.marginLeft = "0";
-
-const imageEl = galleryImagesEl
-  .querySelectorAll(".gallery-item")
-  .forEach((el) => {
-    el.style.display = "block";
-  });
-
 console.log(galleryImagesEl);
 
 //---------------------------------------------------------------------------
-// 3TASK 2варіант - подивіться, будьласка, чи правильно виконаний іншим методом?
+// 3TASK 2варіант - Подивіться, будьласка, чи правильно виконано іншим методом?
 
 // const galleryImagesEl = document.querySelector(".gallery");
 // galleryImagesEl.style.backgroundColor = "#f1b6a1";
