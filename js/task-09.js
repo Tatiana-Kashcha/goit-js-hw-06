@@ -14,5 +14,6 @@ const onWidgetBtnClick = () => {
     .toString(16)
     .padStart(6, 0)}`;
   widgetEl.style.backgroundColor = widgetColorSpan.textContent;
+  console.log(widgetColorSpan.textContent);
 };
 widgetBtn.addEventListener("click", onWidgetBtnClick);
