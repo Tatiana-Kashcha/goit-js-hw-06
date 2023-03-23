@@ -6,5 +6,4 @@ nameInput.addEventListener("input", (event) => {
   if (event.currentTarget.value) {
     nameOutput.textContent = event.currentTarget.value.trim();
   }
-  console.log(nameOutput.textContent);
 });
