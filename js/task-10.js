@@ -35,6 +35,7 @@ function createBoxes(amount) {
   let widthEl = 30;
   let heightEl = 30;
 
+  // Циклом, мабуть не правильно це робити, але не знаю як по-іншому. Підскажіть, будьласка.
   for (let i = 1; i <= amount; i += 1) {
     const boxesItem = document.createElement("div");
 
