@@ -35,7 +35,7 @@ function createBoxes(amount) {
   boxesItem.style.height = "30px";
 
   boxesEl.append(boxesItem);
-  // console.log(amount);
+  console.log(amount);
 }
 createBtn.addEventListener("click", createBoxes);
 
