@@ -6,7 +6,7 @@ function getRandomHexColor() {
 
 const controlsEl = document.querySelector("#controls");
 const quantityInput = controlsEl.firstElementChild;
-// Додаємо плейсхолдер для інпута
+// Додавання плейсхолдера для інпута (в завданні нема, але мені здалося логічним це добавити)
 quantityInput.setAttribute(
   "placeholder",
   `${quantityInput.min} - ${quantityInput.max}`
@@ -18,6 +18,8 @@ const boxesEl = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   // Перевірка введеного значення інпута на валідність
+  // (в завданні нема, але інпут пропускав невалідні значення, тому добавила)
+
   if (
     Number(quantityInput.value) >= Number(quantityInput.min) &&
     Number(quantityInput.value) <= Number(quantityInput.max)
@@ -44,7 +46,7 @@ function createBoxes(amount) {
     boxesItem.style.width = widthEl + "px";
     boxesItem.style.height = heightEl + "px";
 
-    // Збільшені розміри наступного елемента
+    // Збільшення розмірів наступного елемента
     widthEl += 10;
     heightEl += 10;
 
@@ -60,9 +62,8 @@ function destroyBoxes() {
 }
 destroyBtn.addEventListener("click", destroyBoxes);
 
-// Очистка інпута
+// Очистка інпута (в завданні нема, але мені здалося логічним це добавити)
 function resetInputValue() {
   quantityInput.value = null;
 }
 destroyBtn.addEventListener("click", resetInputValue);
-console.log(boxesEl);
