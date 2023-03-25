@@ -4,22 +4,19 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const controlsEl = document.querySelector("#controls");
-const quantityInput = controlsEl.firstElementChild;
-// Додавання плейсхолдера для інпута (в завданні нема, але мені здалося логічним це добавити)
+const quantityInput = document.querySelector("#controls input");
+// Додавання плейсхолдера для інпута
 quantityInput.setAttribute(
   "placeholder",
   `${quantityInput.min} - ${quantityInput.max}`
 );
 
-const createBtn = controlsEl.children[1];
-const destroyBtn = controlsEl.lastElementChild;
+const createBtn = document.querySelector("#controls button[data-create]");
+const destroyBtn = document.querySelector("#controls button[data-destroy]");
 const boxesEl = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   // Перевірка введеного значення інпута на валідність
-  // (в завданні нема, але інпут пропускав невалідні значення, тому добавила)
-
   if (
     Number(quantityInput.value) >= Number(quantityInput.min) &&
     Number(quantityInput.value) <= Number(quantityInput.max)
@@ -35,7 +32,6 @@ function createBoxes(amount) {
   let widthEl = 30;
   let heightEl = 30;
 
-  // Циклом, мабуть не правильно це робити, але не знаю як по-іншому. Підскажіть, будьласка.
   for (let i = 1; i <= amount; i += 1) {
     const boxesItem = document.createElement("div");
 
@@ -44,8 +40,8 @@ function createBoxes(amount) {
       .toString(16)
       .padStart(6, 0)}`;
 
-    boxesItem.style.width = widthEl + "px";
-    boxesItem.style.height = heightEl + "px";
+    boxesItem.style.width = `${widthEl}px`;
+    boxesItem.style.height = `${heightEl}px`;
 
     // Збільшення розмірів наступного елемента
     widthEl += 10;
@@ -63,7 +59,7 @@ function destroyBoxes() {
 }
 destroyBtn.addEventListener("click", destroyBoxes);
 
-// Очистка інпута (в завданні нема, але мені здалося логічним це добавити)
+// Очистка інпута
 function resetInputValue() {
   quantityInput.value = null;
 }

@@ -22,29 +22,3 @@ const itemImages = images.map(makeGalleryImages).join("");
 galleryImagesEl.insertAdjacentHTML("beforeend", itemImages);
 
 console.log(galleryImagesEl);
-
-//---------------------------------------------------------------------------
-// 3TASK 2варіант - Подивіться, будьласка, чи правильно виконано іншим методом?
-
-// const galleryImagesEl = document.querySelector(".gallery");
-// galleryImagesEl.style.backgroundColor = "#f1b6a1";
-// galleryImagesEl.style.display = "flex";
-// galleryImagesEl.style.listStyle = "none";
-// galleryImagesEl.style.justifyContent = "center";
-// galleryImagesEl.style.padding = "30px 0";
-
-// const itemImages = images.map(({ url, alt }) => {
-//   const imageItemEl = document.createElement("li");
-//   const imageEl = document.createElement("img");
-//   imageEl.src = url;
-//   imageEl.alt = alt;
-//   imageEl.height = 200;
-//   imageEl.style.display = "block";
-//   imageItemEl.style.marginLeft = "30px";
-
-//   imageItemEl.append(imageEl);
-//   return imageItemEl;
-// });
-// galleryImagesEl.append(...itemImages);
-// galleryImagesEl.firstElementChild.style.marginLeft = "0";
-// console.log(galleryImagesEl);

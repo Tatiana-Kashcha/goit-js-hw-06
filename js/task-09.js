@@ -4,16 +4,14 @@ function getRandomHexColor() {
     .padStart(6, 0)}`;
 }
 
-const widgetEl = document.querySelector(".widget");
-const widgetColorSpan = widgetEl.children[0].firstElementChild;
-const widgetBtn = widgetEl.lastElementChild;
+const bodyEl = document.querySelector("body");
+const widgetSpanText = document.querySelector(".color");
+const widgetBtn = document.querySelector(".change-color");
 
 const onWidgetBtnClick = () => {
-  widgetBtn.onclick = getRandomHexColor();
-  widgetColorSpan.textContent = `#${Math.floor(Math.random() * 16777215)
-    .toString(16)
-    .padStart(6, 0)}`;
-  widgetEl.style.backgroundColor = widgetColorSpan.textContent;
-  console.log(widgetColorSpan.textContent);
+  const colorBody = getRandomHexColor();
+  widgetSpanText.textContent = colorBody;
+  bodyEl.style.backgroundColor = colorBody;
+  console.log(widgetSpanText.textContent);
 };
 widgetBtn.addEventListener("click", onWidgetBtnClick);
